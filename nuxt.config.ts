@@ -42,6 +42,17 @@ export default defineNuxtConfig({
         base: process.env.NITRO_KV_BASE,
       },
     },
+    routeRules: {
+      '/api/**': {
+      cors: true,
+      headers: {
+        'Access-Control-Allow-Credentials': 'true',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
+        'Access-Control-Allow-Origin': '*'
+      },
+    },
+    }
   },
   hooks: {
     ready(nuxt) {
